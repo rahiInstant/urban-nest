@@ -1,14 +1,11 @@
 import { useContext, useState } from "react";
-import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import toast from "react-hot-toast";
 import { AuthContext } from "../../AuthProvider/authContext";
-import { json } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const UpdateProfile = () => {
-  const [show, setShow] = useState(false);
-  const [passFieldType, setPassFieldType] = useState("password");
-  const [title, setTitle] = useState("Nest | login");
-  const { user , updateProfileData} = useContext(AuthContext);
+  const [title, setTitle] = useState("Nest | update profile");
+  const { user, updateProfileData } = useContext(AuthContext);
   const successMsg = (msg) => toast.success(msg);
   const errorMsg = (msg) => toast.error(msg);
 
@@ -17,21 +14,29 @@ const UpdateProfile = () => {
     const name = e.target.name.value;
     const mail = e.target.mail.value;
     const photo = e.target.photo.value;
-
-    updateProfileData({displayName:name, photoURL:photo, email:mail })
-        .then(() => {
-            successMsg('Profile update successfully.')
-        })
-
+    setTitle("updating...");
+    updateProfileData({ displayName: name, photoURL: photo, email: mail })
+      .then(() => {
+        successMsg("Profile update successfully.");
+        setTitle("Nest | update profile");
+      })
+      .catch((error) => {
+        errorMsg(error.message);
+      });
 
     console.log(name, mail, photo);
   }
 
   return (
     <div className="flex items-center justify-center select-none  mt-24">
+      <Helmet>
+        <title>{title}</title>
+      </Helmet>
       <div className="p-5 mx-4 border border-slate-500 rounded-2xl w-full sm:w-[500px] lg:w-[800px] z-20 bg-white">
-        <h1 className="text-3xl font-black text-center my-5">Update <span className="text-orange-600">Profile</span></h1>
-        <hr className="mb-5"/>
+        <h1 className="text-3xl font-black text-center my-5">
+          Update <span className="text-orange-600">Profile</span>
+        </h1>
+        <hr className="mb-5" />
         <form onSubmit={handleUpdateProfile}>
           <div className="flex flex-col sm:gap-5 items-center w-full">
             <div className="w-full">

@@ -3,8 +3,7 @@ import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { AuthContext } from "../../AuthProvider/authContext";
-import { updateProfile } from "firebase/auth";
-import auth from "../../AuthProvider/firebase.config";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const [show, setShow] = useState(false);
@@ -56,6 +55,9 @@ const Register = () => {
   }
   return (
     <div className=" flex items-center justify-center select-none  mt-24">
+      <Helmet>
+        <title>{title}</title>
+      </Helmet>
       <div className="w-full sm:w-fit mx-4 border-slate-400 border  rounded-2xl flex flex-col  items-end relative">
         <div className="min-h-[320px]"></div>
         <div

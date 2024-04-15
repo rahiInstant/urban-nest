@@ -7,10 +7,8 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Card from "./Card";
-import { useLoaderData } from "react-router-dom";
 
 const Home = () => {
-  const data = useLoaderData();
   useEffect(() => {
     Aos.init();
   }, []);
@@ -44,7 +42,7 @@ const Home = () => {
           ></div>
         </SwiperSlide>
       </Swiper>
-      <Card data={data}></Card>
+      <Card></Card>
     </div>
   );
 };

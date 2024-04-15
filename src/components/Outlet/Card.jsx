@@ -2,8 +2,9 @@ import { GiTwirlyFlower } from "react-icons/gi";
 import PropTypes from "prop-types";
 import Aos from "aos";
 import "aos/dist/aos.css";
-const Card = ({ data }) => {
-  console.log(data);
+import { useLoaderData } from "react-router-dom";
+const Card = () => {
+  const data = useLoaderData();
   return (
     <div className="mt-28 ">
       <div className="flex flex-col gap-6 items-center">
@@ -132,8 +133,5 @@ const Card = ({ data }) => {
   );
 };
 
-Card.propTypes = {
-  data: PropTypes.array.isRequired,
-};
 
 export default Card;
