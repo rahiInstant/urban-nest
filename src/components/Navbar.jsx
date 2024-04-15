@@ -3,7 +3,7 @@ import { HiMenuAlt1 } from "react-icons/hi";
 import { RxCross2 } from "react-icons/rx";
 import NavMiddle from "./NavMiddle";
 import { AuthContext } from "../AuthProvider/authContext";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
 
 const Navbar = () => {
