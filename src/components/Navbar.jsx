@@ -37,7 +37,7 @@ const Navbar = () => {
           </div>
           <div className="text-3xl font-extrabold">Nest</div>
         </div>
-        <NavMiddle routes={routes} open={open}></NavMiddle>
+        {user ? <NavMiddle routes={routes} open={open}></NavMiddle> : ""}
         <div className="flex gap-4">
           {user ? (
             <div className="flex items-center gap-5">
