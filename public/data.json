@@ -1,0 +1,110 @@
+[
+  {
+    "estate_title": "Modern Home with Pool",
+    "id": 1,
+    "segment_name": "Single-family home",
+    "description": "A contemporary single-family home featuring sleek design, spacious interiors, and a private pool.",
+    "price": "$1,200,000",
+    "status": "sale",
+    "area": "3000 sq ft",
+    "location": "Los Angeles, California",
+    "facilities": ["swimming pool", "patio", "gourmet kitchen"],
+    "image": "modern_single_family_home.jpg"
+  },
+  {
+    "estate_title": "Townhouse in Historic District",
+    "id": 2,
+    "segment_name": "Townhouse",
+    "description": "A charming townhouse located in a historic district, offering classic architecture and modern conveniences.",
+    "price": "$800,000",
+    "status": "sale",
+    "area": "2000 sq ft",
+    "location": "Boston, Massachusetts",
+    "facilities": ["fireplace", "garden", "garage"],
+    "image": "historic_district_townhouse.jpg"
+  },
+  {
+    "estate_title": "Luxury in Urban High-Rise",
+    "id": 3,
+    "segment_name": "Apartment",
+    "description": "An upscale apartment situated in a sleek urban high-rise, featuring panoramic city views and premium amenities.",
+    "price": "$1,500,000",
+    "status": "sale",
+    "area": "1800 sq ft",
+    "location": "New York City, New York",
+    "facilities": ["fitness center", "rooftop terrace", "concierge service"],
+    "image": "luxury_apartment_urban_highrise.jpg"
+  },
+  {
+    "estate_title": "Student Housing near Campus",
+    "id": 4,
+    "segment_name": "Student housing",
+    "description": "A modern housing complex designed for students, conveniently located near campus and offering comfortable living spaces.",
+    "price": "$600/month",
+    "status": "rent",
+    "area": "1200 sq ft",
+    "location": "Austin, Texas",
+    "facilities": ["study lounge", "fitness center", "laundry facilities"],
+    "image": "student_housing_near_campus.jpg"
+  },
+  {
+    "estate_title": "Community with Care Services",
+    "id": 5,
+    "segment_name": "Senior living community",
+    "description": "A welcoming senior living community providing various care services and recreational activities for residents.",
+    "price": "$4,000/month",
+    "status": "rent",
+    "area": "1500 sq ft",
+    "location": "Scottsdale, Arizona",
+    "facilities": ["community dining", "therapy rooms", "landscaped gardens"],
+    "image": "senior_living_community.jpg"
+  },
+  {
+    "estate_title": "Beachfront Vacation Villa",
+    "id": 6,
+    "segment_name": "Vacation rental",
+    "description": "A luxurious beachfront villa available for short-term vacation rentals, offering stunning ocean views and resort-style amenities.",
+    "price": "$500/night",
+    "status": "rent",
+    "area": "2500 sq ft",
+    "location": "Maui, Hawaii",
+    "facilities": ["private beach access", "infinity pool", "outdoor kitchen"],
+    "image": "beachfront_vacation_rental_villa.jpg"
+  },
+  {
+    "estate_title": "Cozy Family Home",
+    "id": 7,
+    "segment_name": "Single-family home",
+    "description": "A warm and inviting family home located in a peaceful suburban neighborhood, ideal for raising a family.",
+    "price": "$600,000",
+    "status": "sale",
+    "area": "2200 sq ft",
+    "location": "Seattle, Washington",
+    "facilities": ["backyard", "garage", "home office"],
+    "image": "family_home_suburban_neighborhood.jpg"
+  },
+  {
+    "estate_title": "Contemporary Loft",
+    "id": 8,
+    "segment_name": "Apartment",
+    "description": "A stylish loft apartment situated in a vibrant artsy district, offering open-concept living and creative inspiration.",
+    "price": "$900,000",
+    "status": "sale",
+    "area": "1600 sq ft",
+    "location": "Brooklyn, New York",
+    "facilities": ["exposed brick walls", "large windows", "art studio space"],
+    "image": "contemporary_loft_artsy_district.jpg"
+  },
+  {
+    "estate_title": "Mountain Retreat Cabin",
+    "id": 9,
+    "segment_name": "Vacation rental",
+    "description": "A cozy mountain cabin retreat surrounded by nature, offering panoramic views and outdoor adventure.",
+    "price": "$300/night",
+    "status": "rent",
+    "area": "1000 sq ft",
+    "location": "Lake Tahoe, California",
+    "facilities": ["wood-burning fireplace", "hot tub", "hiking trails nearby"],
+    "image": "mountain_retreat_cabin_scenic_views.jpg"
+  }
+]

@@ -1,0 +1,23 @@
+.slide {
+  height: 500px;
+  border-radius: 12px;
+}
+
+#slide_01 {
+  background: url("/slide_01.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#slide_02 {
+  background: url("/slide_01.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#slide_03 {
+  background: url("/slide_01.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
