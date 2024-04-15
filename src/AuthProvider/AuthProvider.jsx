@@ -11,12 +11,13 @@ import {
   signInWithPopup,
   signOut,
 } from "firebase/auth";
+import { updateProfile } from "firebase/auth/cordova";
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
-console.log(user)
+  console.log(user);
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -48,6 +49,10 @@ console.log(user)
     return signOut(auth);
   }
 
+  function updateProfileData(userObj) {
+    return updateProfile(auth.currentUser, userObj);
+  }
+
   const authInfo = {
     user,
     loading,
@@ -56,6 +61,7 @@ console.log(user)
     logOut,
     googleSignIn,
     githubSignIn,
+    updateProfileData
   };
 
   return (

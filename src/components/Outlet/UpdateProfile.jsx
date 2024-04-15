@@ -2,12 +2,13 @@ import { useContext, useState } from "react";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import toast from "react-hot-toast";
 import { AuthContext } from "../../AuthProvider/authContext";
+import { json } from "react-router-dom";
 
 const UpdateProfile = () => {
   const [show, setShow] = useState(false);
   const [passFieldType, setPassFieldType] = useState("password");
   const [title, setTitle] = useState("Nest | login");
-  const { user } = useContext(AuthContext);
+  const { user , updateProfileData} = useContext(AuthContext);
   const successMsg = (msg) => toast.success(msg);
   const errorMsg = (msg) => toast.error(msg);
 
@@ -16,18 +17,26 @@ const UpdateProfile = () => {
     const name = e.target.name.value;
     const mail = e.target.mail.value;
     const photo = e.target.photo.value;
-    const pass = e.target.pass.value;
-    console.log(name, mail, photo, pass);
+
+    updateProfileData({displayName:name, photoURL:photo, email:mail })
+        .then(() => {
+            successMsg('Profile update successfully.')
+        })
+
+
+    console.log(name, mail, photo);
   }
 
   return (
     <div className="flex items-center justify-center select-none  mt-24">
-      <div className="p-5 mx-4 border-slate-400 border  rounded-2xl flex flex-col  items-end relative">
+      <div className="p-5 mx-4 border border-slate-500 rounded-2xl w-full sm:w-[500px] lg:w-[800px] z-20 bg-white">
+        <h1 className="text-3xl font-black text-center my-5">Update <span className="text-orange-600">Profile</span></h1>
+        <hr className="mb-5"/>
         <form onSubmit={handleUpdateProfile}>
-          <div className="flex flex-col sm:flex-row sm:gap-5 items-center w-full">
+          <div className="flex flex-col sm:gap-5 items-center w-full">
             <div className="w-full">
               <label htmlFor="mail" className="block text-xl font-semibold">
-                Name <span className="text-red-600">*</span>
+                Name
               </label>
               <input
                 required
@@ -57,7 +66,7 @@ const UpdateProfile = () => {
           <div className="flex flex-col sm:flex-row sm:gap-5 items-center sm:mt-6 w-full">
             <div className="w-full mt-6 sm:mt-0">
               <label htmlFor="mail" className="block text-xl font-semibold">
-                Email <span className="text-red-600">*</span>
+                Email
               </label>
               <input
                 required
@@ -67,38 +76,6 @@ const UpdateProfile = () => {
                 placeholder="your@mail.com"
                 className="w-full  outline-none bg-[#F3F3F3] rounded-md p-3 mt-4"
               />
-            </div>
-            <div className="w-full mt-6 sm:mt-0">
-              <label className="block text-xl font-semibold " htmlFor="pass">
-                Password <span className="text-red-600">*</span>
-              </label>
-              <div className="h-fit mt-4 relative">
-                <input
-                  required
-                  type={passFieldType}
-                  name="pass"
-                  placeholder="S/tR-o*N-g"
-                  className="w-full outline-none bg-[#F3F3F3] rounded-md p-3 "
-                />
-                <FaRegEye
-                  className={`absolute top-1/2 -translate-y-1/2 right-3 text-xl cursor-pointer ${
-                    show ? "hidden" : ""
-                  }`}
-                  onClick={() => {
-                    setShow(true);
-                    setPassFieldType("text");
-                  }}
-                />
-                <FaRegEyeSlash
-                  className={`absolute top-1/2 -translate-y-1/2 right-3 text-xl cursor-pointer ${
-                    show ? "" : "hidden"
-                  }`}
-                  onClick={() => {
-                    setShow(false);
-                    setPassFieldType("password");
-                  }}
-                />
-              </div>
             </div>
           </div>
 

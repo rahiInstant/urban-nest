@@ -12,7 +12,7 @@ const Register = () => {
   const [title, setTitle] = useState("Nest | login");
   const location = useLocation();
   const navigate = useNavigate();
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateProfileData } = useContext(AuthContext);
   const successMsg = (msg) => toast.success(msg);
   const errorMsg = (msg) => toast.error(msg);
 
@@ -35,7 +35,7 @@ const Register = () => {
 
     createUser(email, password)
       .then(() => {
-        updateProfile(auth.currentUser, {
+        updateProfileData({
           displayName: name,
           photoURL: photo,
         })
