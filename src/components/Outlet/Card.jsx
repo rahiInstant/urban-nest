@@ -2,7 +2,7 @@ import { GiTwirlyFlower } from "react-icons/gi";
 import PropTypes from "prop-types";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 const Card = () => {
   const data = useLoaderData();
   return (
@@ -73,9 +73,9 @@ const Card = () => {
                       {category.price}
                     </h1>
                   </div>
-                  <button className=" bg-[#23BE0A] px-3 py-2 rounded-md text-white font-medium flex-auto">
+                  <Link to={`/detail/${category.id}`} className=" bg-[#23BE0A] px-3 py-2 text-center rounded-md text-white font-medium flex-auto">
                     Show Detail
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

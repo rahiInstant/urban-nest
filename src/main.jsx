@@ -36,7 +36,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/detail/:itemID",
-        loader: () => fetch("/data.json"),
+        loader: async ({params}) => {
+          const res = await fetch("/data.json")
+          const data = await res.json()
+          const Actual = data.find((item) => item.id === params.itemID)
+          return Actual
+        },
         element: <Detail></Detail>,
       },
       {

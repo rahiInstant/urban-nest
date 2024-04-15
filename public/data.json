@@ -1,7 +1,7 @@
 [
   {
     "estate_title": "Modern Home with Pool",
-    "id": 1,
+    "id": "1",
     "segment_name": "Single-family home",
     "description": "A contemporary single-family home featuring sleek design, spacious interiors, and a private pool.",
     "price": "$1,200,000",
@@ -13,7 +13,7 @@
   },
   {
     "estate_title": "Townhouse in Historic District",
-    "id": 2,
+    "id": "2",
     "segment_name": "Townhouse",
     "description": "A charming townhouse located in a historic district, offering classic architecture and modern conveniences.",
     "price": "$800,000",
@@ -25,7 +25,7 @@
   },
   {
     "estate_title": "Luxury in Urban High-Rise",
-    "id": 3,
+    "id": "3",
     "segment_name": "Apartment",
     "description": "An upscale apartment situated in a sleek urban high-rise, featuring panoramic city views and premium amenities.",
     "price": "$1,500,000",
@@ -37,7 +37,7 @@
   },
   {
     "estate_title": "Student Housing near Campus",
-    "id": 4,
+    "id": "4",
     "segment_name": "Student housing",
     "description": "A modern housing complex designed for students, conveniently located near campus and offering comfortable living spaces.",
     "price": "$600/month",
@@ -49,7 +49,7 @@
   },
   {
     "estate_title": "Community with Care Services",
-    "id": 5,
+    "id": "5",
     "segment_name": "Senior living community",
     "description": "A welcoming senior living community providing various care services and recreational activities for residents.",
     "price": "$4,000/month",
@@ -61,7 +61,7 @@
   },
   {
     "estate_title": "Beachfront Vacation Villa",
-    "id": 6,
+    "id": "6",
     "segment_name": "Vacation rental",
     "description": "A luxurious beachfront villa available for short-term vacation rentals, offering stunning ocean views and resort-style amenities.",
     "price": "$500/night",
@@ -73,7 +73,7 @@
   },
   {
     "estate_title": "Cozy Family Home",
-    "id": 7,
+    "id": "7",
     "segment_name": "Single-family home",
     "description": "A warm and inviting family home located in a peaceful suburban neighborhood, ideal for raising a family.",
     "price": "$600,000",
@@ -85,7 +85,7 @@
   },
   {
     "estate_title": "Contemporary Loft",
-    "id": 8,
+    "id": "8",
     "segment_name": "Apartment",
     "description": "A stylish loft apartment situated in a vibrant artsy district, offering open-concept living and creative inspiration.",
     "price": "$900,000",
@@ -97,7 +97,7 @@
   },
   {
     "estate_title": "Mountain Retreat Cabin",
-    "id": 9,
+    "id": "9",
     "segment_name": "Vacation rental",
     "description": "A cozy mountain cabin retreat surrounded by nature, offering panoramic views and outdoor adventure.",
     "price": "$300/night",
