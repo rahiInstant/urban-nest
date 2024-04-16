@@ -9,4 +9,4 @@ Currently, two official plugins are available:
 ## npm packages used in this site
 - AOS packages - Animate on scroll library
 - React-leaflet - React component for leaflet map
-- 
+- Swiper - A slider package
