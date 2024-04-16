@@ -36,13 +36,17 @@ const router = createBrowserRouter([
       },
       {
         path: "/detail/:itemID",
-        loader: async ({params}) => {
-          const res = await fetch("/data.json")
-          const data = await res.json()
-          const Actual = data.find((item) => item.id === params.itemID)
-          return Actual
+        loader: async ({ params }) => {
+          const res = await fetch("/data.json");
+          const data = await res.json();
+          const Actual = data.find((item) => item.id === params.itemID);
+          return Actual;
         },
-        element: <Detail></Detail>,
+        element: (
+          <Private>
+            <Detail></Detail>
+          </Private>
+        ),
       },
       {
         path: "/order",

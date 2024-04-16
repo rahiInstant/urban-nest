@@ -8,12 +8,12 @@ import "leaflet/dist/leaflet.css";
 const Card = () => {
   const data = useLoaderData();
   return (
-    <div className="mt-28 ">
-      <div className="flex flex-col gap-6 items-center">
-        <h1 className="font-black text-[55px] text-center">
+    <div className="mt-12 lg:mt-28 ">
+      <div className="flex flex-col gap-6 items-center mx-4">
+        <h1 className="font-black text-3xl md:text-4xl lg:text-[55px] text-center">
           Versatile Housing Options
         </h1>
-        <p className="text-lg font-medium w-5/6 text-center">
+        <p className="text-lg font-medium w-full lg:w-5/6 text-center">
           Explore a range of living options from single-family homes to vacation
           rentals. Discover your perfect dwelling with our varied selection.
         </p>
