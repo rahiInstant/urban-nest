@@ -1,8 +1,10 @@
 import { GiTwirlyFlower } from "react-icons/gi";
-import PropTypes from "prop-types";
-import Aos from "aos";
 import "aos/dist/aos.css";
 import { Link, useLoaderData } from "react-router-dom";
+import { IoLocationSharp } from "react-icons/io5";
+import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+
 const Card = () => {
   const data = useLoaderData();
   return (
@@ -24,7 +26,6 @@ const Card = () => {
               className="border p-4 w-full rounded-xl flex gap-5 flex-col lg:flex-row"
               data-aos="fade-up"
               data-aos-delay="150"
-              
             >
               <img
                 className="rounded-lg lg:w-60 w-full"
@@ -35,9 +36,16 @@ const Card = () => {
                 <h1 className="text-2xl font-semibold text-[#131313] ">
                   {category.estate_title}
                 </h1>
-                <h1 className="text-[#131313CC] text-lg font-medium mt-4 ">
-                  {category.segment_name}
-                </h1>
+                <div className="flex mt-4  gap-4 items-start lg:items-center flex-col lg:flex-row">
+                  <h1 className="text-[#131313CC] text-lg font-medium ">
+                    {category.segment_name}
+                  </h1>
+                  <h1 className="flex gap-2 items-center">
+                    {" "}
+                    <IoLocationSharp />
+                    {category.location}
+                  </h1>
+                </div>
                 <div className="mt-4 flex flex-col lg:flex-row lg:items-center gap-3 bg-[#FFAC3326] p-2  rounded-md">
                   <h1 className="text-lg font-medium bg-[#e99920] h-12 px-5 text-white rounded-md flex justify-center items-center">
                     Facilities
@@ -50,15 +58,6 @@ const Card = () => {
                         </h1>
                       );
                     })}
-                    {/* <h1 className="flex items-center gap-2">
-                      <GiTwirlyFlower /> swimming pool
-                    </h1>
-                    <h1 className="flex items-center gap-2">
-                      <GiTwirlyFlower /> patio
-                    </h1>
-                    <h1 className="flex items-center gap-2">
-                      <GiTwirlyFlower /> gourmet kitchen
-                    </h1> */}
                   </div>
                 </div>
                 <div className="mt-5 flex flex-col lg:flex-row gap-4">
@@ -73,7 +72,10 @@ const Card = () => {
                       {category.price}
                     </h1>
                   </div>
-                  <Link to={`/detail/${category.id}`} className=" bg-[#23BE0A] px-3 py-2 text-center rounded-md text-white font-medium flex-auto">
+                  <Link
+                    to={`/detail/${category.id}`}
+                    className=" bg-[#23BE0A] px-3 py-2 text-center rounded-md text-white font-medium flex-auto"
+                  >
                     Show Detail
                   </Link>
                 </div>
@@ -129,9 +131,31 @@ const Card = () => {
           </div>
         </div> */}
       </div>
+      <div className=" h-fit mt-10 w-full ">
+        <MapContainer
+          style={{
+            height: "350px",
+            borderRadius:'10px'
+          }}
+          
+          center={[22.36739838024788, 91.84276665826629]}
+          zoom={13}
+          scrollWheelZoom={false}
+        >
+          <TileLayer
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          <Marker position={[51.505, -0.09]}>
+            <Popup>
+              Nest Ltd. <br />
+              Agargao, Dhaka
+            </Popup>
+          </Marker>
+        </MapContainer>
+      </div>
     </div>
   );
 };
-
 
 export default Card;
