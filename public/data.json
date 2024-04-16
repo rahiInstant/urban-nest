@@ -9,7 +9,13 @@
     "area": "3000 sq ft",
     "location": "Los Angeles, California",
     "facilities": ["swimming pool", "patio", "gourmet kitchen"],
-    "image": "/card_01.jpg"
+    "image": "/card_01.jpg",
+    "icon_image": [
+      "/card_01.jpg",
+      "/card_02.jpg",
+      "/card_03.jpg",
+      "/card_05.jpg"
+    ]
   },
   {
     "estate_title": "Townhouse in Historic District",
@@ -21,7 +27,13 @@
     "area": "2000 sq ft",
     "location": "Boston, Massachusetts",
     "facilities": ["fireplace", "garden", "garage"],
-    "image": "/card_02.jpg"
+    "image": "/card_02.jpg",
+    "icon_image": [
+      "/card_02.jpg",
+      "/card_03.jpg",
+      "/card_04.jpg",
+      "/card_05.jpg"
+    ]
   },
   {
     "estate_title": "Luxury in Urban High-Rise",
@@ -33,7 +45,13 @@
     "area": "1800 sq ft",
     "location": "New York City, New York",
     "facilities": ["fitness center", "rooftop terrace", "concierge service"],
-    "image": "/card_03.jpg"
+    "image": "/card_03.jpg",
+    "icon_image": [
+      "/card_03.jpg",
+      "/card_04.jpg",
+      "/card_05.jpg",
+      "/card_06.jpg"
+    ]
   },
   {
     "estate_title": "Student Housing near Campus",
@@ -45,7 +63,13 @@
     "area": "1200 sq ft",
     "location": "Austin, Texas",
     "facilities": ["study lounge", "fitness center", "laundry facilities"],
-    "image": "/card_04.jpg"
+    "image": "/card_04.jpg",
+    "icon_image": [
+      "/card_04.jpg",
+      "/card_05.jpg",
+      "/card_06.jpg",
+      "/card_07.jpg"
+    ]
   },
   {
     "estate_title": "Community with Care Services",
@@ -57,7 +81,13 @@
     "area": "1500 sq ft",
     "location": "Scottsdale, Arizona",
     "facilities": ["community dining", "therapy rooms", "landscaped gardens"],
-    "image": "/card_05.jpg"
+    "image": "/card_05.jpg",
+    "icon_image": [
+      "/card_05.jpg",
+      "/card_06.jpg",
+      "/card_07.jpg",
+      "/card_08.jpg"
+    ]
   },
   {
     "estate_title": "Beachfront Vacation Villa",
@@ -69,7 +99,13 @@
     "area": "2500 sq ft",
     "location": "Maui, Hawaii",
     "facilities": ["private beach access", "infinity pool", "outdoor kitchen"],
-    "image": "/card_06.jpg"
+    "image": "/card_06.jpg",
+    "icon_image": [
+      "/card_06.jpg",
+      "/card_07.jpg",
+      "/card_08.jpg",
+      "/card_09.jpg"
+    ]
   },
   {
     "estate_title": "Cozy Family Home",
@@ -81,7 +117,13 @@
     "area": "2200 sq ft",
     "location": "Seattle, Washington",
     "facilities": ["backyard", "garage", "home office"],
-    "image": "/card_07.jpg"
+    "image": "/card_07.jpg",
+    "icon_image": [
+      "/card_07.jpg",
+      "/card_08.jpg",
+      "/card_09.jpg",
+      "/card_01.jpg"
+    ]
   },
   {
     "estate_title": "Contemporary Loft",
@@ -93,7 +135,13 @@
     "area": "1600 sq ft",
     "location": "Brooklyn, New York",
     "facilities": ["exposed brick walls", "large windows", "art studio space"],
-    "image": "/card_08.jpg"
+    "image": "/card_08.jpg",
+    "icon_image": [
+      "/card_08.jpg",
+      "/card_09.jpg",
+      "/card_01.jpg",
+      "/card_02.jpg"
+    ]
   },
   {
     "estate_title": "Mountain Retreat Cabin",
@@ -105,6 +153,12 @@
     "area": "1000 sq ft",
     "location": "Lake Tahoe, California",
     "facilities": ["wood-burning fireplace", "hot tub", "hiking trails nearby"],
-    "image": "/card_09.jpg"
+    "image": "/card_09.jpg",
+    "icon_image": [
+      "/card_09.jpg",
+      "/card_01.jpg",
+      "/card_02.jpg",
+      "/card_03.jpg"
+    ]
   }
 ]

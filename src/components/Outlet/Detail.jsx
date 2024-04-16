@@ -1,14 +1,19 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { GiTwirlyFlower } from "react-icons/gi";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { checkDataDuplicate, setData } from "./manageLS";
 import toast from "react-hot-toast";
 import { IoLocationSharp } from "react-icons/io5";
+import { Helmet } from "react-helmet-async";
 const Detail = () => {
   const data = useLoaderData();
   const [heroImg, setHeroImg] = useState(data.image);
+  const [helmet, setHelmet] = useState("Nest | Detail ");
+  const navigate = useNavigate();
+
   const errorMsg = (msg) => toast.error(msg);
   const successMsg = (msg) => toast.success(msg);
+
   function handleScheduleSubmit(e) {
     e.preventDefault();
     const time = e.target.time.value;
@@ -37,7 +42,11 @@ const Detail = () => {
         phone,
         comment,
       });
-      successMsg("Booking your visit successfully.");
+      successMsg("Booking your visit successfully.Redirecting");
+      setHelmet("Redirecting...");
+      setTimeout(() => {
+        navigate("/order");
+      }, 2000);
     } else {
       errorMsg("Schedule Already submitted for this specific item.");
     }
@@ -45,22 +54,25 @@ const Detail = () => {
   }
   return (
     <div className=" px-4 w-full  flex flex-col lg:flex-row mt-12 duration-300">
+      <Helmet>
+        <title>{helmet}</title>
+      </Helmet>
       <div className="w-full lg:w-[70%] p-4 flex flex-col items-center">
-        <div className="flex items-center flex-col lg:flex-row lg:justify-between w-full text-center lg:text-left">
+        <div className="flex items-center flex-col md:flex-row md:justify-between w-full text-center md:text-left">
           <div>
             <h1 className="text-2xl font-bold">{data.estate_title}</h1>
-            <h1 className="text-lg flex gap-2 items-center justify-center lg:justify-start">
+            <h1 className="text-lg flex gap-2 items-center justify-center md:justify-start">
               <IoLocationSharp />
               {data.location}
             </h1>
           </div>
           <div className="flex flex-col">
-            <h1 className="text-lg text-center lg:text-right">{data.area}</h1>
+            <h1 className="text-lg text-center md:text-right">{data.area}</h1>
             <h1 className="text-2xl font-bold">{data.price}</h1>
           </div>
         </div>
         <div className="mt-5">
-          <div>
+          <div className="h-auto">
             <div className="w-fit h-fit relative">
               <h1
                 className={`${
@@ -69,31 +81,35 @@ const Detail = () => {
               >
                 For {data.status == "sale" ? "sale" : "rent"}
               </h1>
-              <img className="rounded-lg " src={heroImg} alt="" />
+              <img
+                className="rounded-lg h-[500px] w-full"
+                src={heroImg}
+                alt=""
+              />
             </div>
             <div className="flex gap-3 mt-4 justify-center">
               <img
-                onMouseMove={() => setHeroImg("/card_02.jpg")}
+                onMouseMove={() => setHeroImg(data.icon_image[0])}
                 className="w-40 h-28 rounded-lg cursor-pointer"
-                src="/slide_02.jpg"
+                src={data.icon_image[0]}
                 alt=""
               />
               <img
-                onMouseMove={() => setHeroImg("/card_03.jpg")}
+                onMouseMove={() => setHeroImg(data.icon_image[1])}
                 className="w-40 h-28 rounded-lg cursor-pointer"
-                src="/slide_01.jpg"
+                src={data.icon_image[1]}
                 alt=""
               />
               <img
-                onMouseMove={() => setHeroImg("/slide_02.jpg")}
+                onMouseMove={() => setHeroImg(data.icon_image[2])}
                 className="w-40 h-28 rounded-lg hidden md:block cursor-pointer"
-                src="/slide_02.jpg"
+                src={data.icon_image[2]}
                 alt=""
               />
               <img
-                onMouseMove={() => setHeroImg("/slide_02.jpg")}
+                onMouseMove={() => setHeroImg(data.icon_image[3])}
                 className="w-40 h-28 rounded-lg hidden lg:block cursor-pointer"
-                src="/slide_02.jpg"
+                src={data.icon_image[3]}
                 alt=""
               />
             </div>
@@ -133,9 +149,13 @@ const Detail = () => {
             Print
           </button>
         </div>
-        <h1 className="text-xl font-semibold uppercase text-center my-5">
+        <h1 className="text-xl font-semibold uppercase text-center mt-5 mb-2">
           Schedule a tour
         </h1>
+        <p className="mb-5 text-center">
+          Schedule a tour for visiting this house to explore all awesome
+          feature.
+        </p>
         <hr />
         <form onSubmit={handleScheduleSubmit}>
           <label className="text-lg font-medium mt-4 block" htmlFor="time">

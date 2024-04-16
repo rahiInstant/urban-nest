@@ -1,17 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getData, removeFromLs } from "./manageLS";
 import { RxCross2 } from "react-icons/rx";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 const OrderDetail = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     setData(getData());
   }, []);
-  console.log(data)
-
-  const storageData = getData();
-  console.log(storageData);
-
   function handleCancleBtn(id) {
     removeFromLs(id) 
     const remainingCart = data.filter((item) => item.id !== id)
@@ -19,6 +15,9 @@ const OrderDetail = () => {
   }
   return (
     <div className="mt-10">
+      <Helmet>
+        <title>Nest | Booking Detail</title>
+      </Helmet>
       <h1 className="text-3xl font-bold text-center">
         Your Submitted Schedule
       </h1>
@@ -68,7 +67,7 @@ const OrderDetail = () => {
                 <hr className="mb-3" />
                 <img
                   className="h-[250px] w-full rounded-lg"
-                  src="/public/slide_01.jpg"
+                  src={item.image}
                   alt=""
                 />
                 <h1 className="text-xl font-semibold mt-3">

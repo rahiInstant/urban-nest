@@ -131,9 +131,9 @@ const Card = () => {
           </div>
         </div> */}
       </div>
-      <div className=" h-fit mt-10 w-full ">
+      <div className=" h-fit mt-10 lg:mt-20 w-full ">
         <h1 className="text-3xl md:text-4xl lg:text-[55px] font-black text-center">Find us</h1>
-        <hr className="mb-5 mt-3"/>
+        <hr className="mb-5 mt-3 lg:mt-10"/>
         <MapContainer
           style={{
             height: "350px",

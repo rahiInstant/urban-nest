@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 import "./NavMiddle.css";
 const NavMiddle = ({ open, user }) => {
-  console.log(user);
   return (
     <div
       className={`lg:flex w-[200px] lg:w-auto
