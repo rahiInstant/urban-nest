@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { GiTwirlyFlower } from "react-icons/gi";
 import { useLoaderData } from "react-router-dom";
 import { checkDataDuplicate, setData } from "./manageLS";
@@ -9,8 +9,6 @@ const Detail = () => {
   const [heroImg, setHeroImg] = useState(data.image);
   const errorMsg = (msg) => toast.error(msg);
   const successMsg = (msg) => toast.success(msg);
-
-  console.log(data);
   function handleScheduleSubmit(e) {
     e.preventDefault();
     const time = e.target.time.value;
@@ -23,6 +21,7 @@ const Detail = () => {
     const estate_title = data.estate_title;
     const image = data.image;
     const area = data.area;
+
     // store in ls  (duplicate check) => get from ls
     const isDuplicate = checkDataDuplicate(id);
     if (!isDuplicate) {
@@ -38,25 +37,25 @@ const Detail = () => {
         phone,
         comment,
       });
-      successMsg('Booking Successfully!!')
+      successMsg("Booking your visit successfully.");
     } else {
       errorMsg("Schedule Already submitted for this specific item.");
     }
-    console.log(time, visit, name, mail, phone, comment, id, isDuplicate);
+    // console.log(time, visit, name, mail, phone, comment, id, isDuplicate);
   }
   return (
-    <div className=" w-full flex  mt-12 duration-300">
-      <div className="w-[70%] p-4 flex flex-col items-center">
-        <div className="flex justify-between w-full">
+    <div className=" px-4 w-full  flex flex-col lg:flex-row mt-12 duration-300">
+      <div className="w-full lg:w-[70%] p-4 flex flex-col items-center">
+        <div className="flex items-center flex-col lg:flex-row lg:justify-between w-full text-center lg:text-left">
           <div>
             <h1 className="text-2xl font-bold">{data.estate_title}</h1>
-            <h1 className="text-lg flex gap-2 items-center">
+            <h1 className="text-lg flex gap-2 items-center justify-center lg:justify-start">
               <IoLocationSharp />
               {data.location}
             </h1>
           </div>
-          <div>
-            <h1 className="text-lg text-right">{data.area}</h1>
+          <div className="flex flex-col">
+            <h1 className="text-lg text-center lg:text-right">{data.area}</h1>
             <h1 className="text-2xl font-bold">{data.price}</h1>
           </div>
         </div>
@@ -122,7 +121,7 @@ const Detail = () => {
           </div>
         </div>
       </div>
-      <div className="w-[30%] p-4">
+      <div className="w-full lg:w-[30%] p-4 ">
         <div className="flex gap-3 justify-center w-full ">
           <button className="px-2 py-1 border rounded-md w-full hover:bg-slate-100 duration-200">
             Share

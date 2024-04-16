@@ -22,13 +22,13 @@ const OrderDetail = () => {
       <h1 className="text-3xl font-bold text-center">
         Your Submitted Schedule
       </h1>
-      <hr className="mt-5" />
-      <div className="mt-12">
+      <hr className="mt-5 mx-4" />
+      <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-8">
         {data.map((item, id) => {
           return (
             <div
               key={id}
-              className="border h-fit rounded-lg p-4 w-[300px] flex flex-col text-justify relative"
+              className="border h-fit rounded-lg p-4  flex flex-col text-justify relative"
             >
               <div
                 onClick={() => handleCancleBtn(item.id)}
