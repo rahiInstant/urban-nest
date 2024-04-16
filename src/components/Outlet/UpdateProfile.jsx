@@ -23,7 +23,9 @@ const UpdateProfile = () => {
         setTitle("Nest | update profile");
       })
       .catch((error) => {
-        errorMsg(error.message);
+        const Msg = error.message;
+        const actualMsg = Msg.slice(Msg.indexOf("/") + 1, Msg.indexOf(")"));
+        errorMsg(actualMsg);
       });
 
     console.log(name, mail, photo);

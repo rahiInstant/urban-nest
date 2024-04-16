@@ -32,9 +32,10 @@ const Login = () => {
         }, 2000);
       })
       .catch((error) => {
-        errorMsg(error.message);
+        const Msg = error.message;
+        const actualMsg = Msg.slice(Msg.indexOf("/") + 1, Msg.indexOf(")"));
+        errorMsg(actualMsg);
       });
-    console.log(e);
   }
 
   function handleGoogleSignIn() {
@@ -47,7 +48,9 @@ const Login = () => {
         }, 2000);
       })
       .catch((error) => {
-        errorMsg(error.message);
+        const Msg = error.message;
+        const actualMsg = Msg.slice(Msg.indexOf("/") + 1, Msg.indexOf(")"));
+        errorMsg(actualMsg);
       });
   }
 
@@ -61,11 +64,16 @@ const Login = () => {
         }, 2000);
       })
       .catch((error) => {
-        errorMsg(error.message);
+        const Msg = error.message;
+        const actualMsg = Msg.slice(Msg.indexOf("/") + 1, Msg.indexOf(")"));
+        errorMsg(actualMsg);
       });
   }
   return (
-    <div onClick={() => setOPen(false)}  className=" flex items-center justify-center h-full  select-none mt-24">
+    <div
+      onClick={() => setOPen(false)}
+      className=" flex items-center justify-center h-full  select-none mt-24"
+    >
       <Helmet>
         <title>{title}</title>
       </Helmet>

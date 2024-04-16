@@ -27,7 +27,10 @@ const Detail = () => {
     const estate_title = data.estate_title;
     const image = data.image;
     const area = data.area;
-
+    // if (visit == "") {
+    //   errorMsg("Please select a time schedule.");
+    //   return;
+    // }
     // store in ls  (duplicate check) => get from ls
     const isDuplicate = checkDataDuplicate(id);
     if (!isDuplicate) {
@@ -166,10 +169,10 @@ const Detail = () => {
             className="border border-gray-600 rounded-[4px] w-full  h-10 mt-3"
             name="time"
             id="time"
+            required
           >
-            <option className="hidden" value="indicator">
-              {" "}
-              -- select time --{" "}
+            <option className="hidden" value="">
+              -- select time --
             </option>
             <option value="11.00 am to 2.00 pm">9.00 am to 12.00 pm</option>
             <option value="11.00 am to 2.00 pm">11.00 am to 2.00 pm</option>
@@ -185,7 +188,8 @@ const Detail = () => {
                 name="visit"
                 id="person"
                 value="person"
-                className="hidden"
+                className="opacity-0"
+                required
               />
               In Person
             </label>
@@ -194,11 +198,12 @@ const Detail = () => {
               htmlFor="video"
             >
               <input
+                required
                 type="radio"
                 name="visit"
                 id="video"
                 value="video"
-                className="hidden"
+                className="opacity-0"
               />
               video Chat
             </label>
@@ -209,6 +214,7 @@ const Detail = () => {
             placeholder="Your Name"
             name="name"
             type="text"
+            required
           />
           <input
             className="w-full h-10 p-3 bg-slate-100 outline-none rounded-md mt-4"
@@ -221,6 +227,7 @@ const Detail = () => {
             placeholder="+254545545"
             name="phone"
             type="text"
+            required
           />
           <textarea
             className="w-full p-3 h-full bg-slate-100 outline-none rounded-lg mt-4"

@@ -48,11 +48,15 @@ const Register = () => {
             }, 2000);
           })
           .catch((error) => {
-            errorMsg(error.message);
+            const Msg = error.message;
+            const actualMsg = Msg.slice(Msg.indexOf("/") + 1, Msg.indexOf(")"));
+            errorMsg(actualMsg);
           });
       })
       .catch((error) => {
-        errorMsg(error.message);
+        const Msg = error.message;
+        const actualMsg = Msg.slice(Msg.indexOf("/") + 1, Msg.indexOf(")"));
+        errorMsg(actualMsg);
       });
   }
   return (
