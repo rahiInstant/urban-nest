@@ -35,7 +35,9 @@ const Navbar = () => {
           <div onClick={() => setOPen(!open)} className="text-2xl lg:hidden">
             {open ? <RxCross2 /> : <HiMenuAlt1 />}
           </div>
-          <div className="text-3xl font-extrabold">Nest</div>
+          <div className="text-2xl md:text-3xl font-extrabold">
+            Comfortable Nest
+          </div>
         </div>
         <NavMiddle user={user} routes={routes} open={open}></NavMiddle>
         <div className="flex gap-4">

@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css";
 import "swiper/css/pagination";
+
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
@@ -16,11 +17,13 @@ const Home = () => {
   return (
     <div className="mx-4 -z-50 mt-7">
       <Swiper
-        pagination={true}
+      pagination={true}
         modules={[Pagination]}
         className="mySwiper"
         spaceBetween={50}
         slidesPerView={1}
+        loop={true}
+
         // onSlideChange={() => console.log("slide change")}
       >
         <SwiperSlide>

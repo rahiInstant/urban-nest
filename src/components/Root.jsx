@@ -6,7 +6,7 @@ import { Outlet } from "react-router-dom";
 
 const Root = () => {
   return (
-    <div className="max-w-6xl mx-auto font-Poppins">
+    <div className="max-w-6xl mx-auto font-Poppins select-none">
       <Helmet>
         <title>Nest | Home</title>
       </Helmet>
