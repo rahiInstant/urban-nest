@@ -2,8 +2,10 @@ import { useContext, useState } from "react";
 import toast from "react-hot-toast";
 import { AuthContext } from "../../AuthProvider/authContext";
 import { Helmet } from "react-helmet-async";
+import { NavContext } from "../navContext";
 
 const UpdateProfile = () => {
+  const { setOPen } = useContext(NavContext);
   const [title, setTitle] = useState("Nest | update profile");
   const { user, updateProfileData } = useContext(AuthContext);
   const successMsg = (msg) => toast.success(msg);
@@ -28,7 +30,10 @@ const UpdateProfile = () => {
   }
 
   return (
-    <div className="flex items-center justify-center select-none  mt-24">
+    <div
+      onClick={() => setOPen(false)}
+      className="flex items-center justify-center select-none h-full w-full  mt-24"
+    >
       <Helmet>
         <title>{title}</title>
       </Helmet>

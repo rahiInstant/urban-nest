@@ -5,9 +5,10 @@ import NavMiddle from "./NavMiddle";
 import { AuthContext } from "../AuthProvider/authContext";
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
+import { NavContext } from "./navContext";
 
 const Navbar = () => {
-  const [open, setOPen] = useState(false);
+  const { open, setOPen } = useContext(NavContext);
   const routes = [
     { path: "/", name: "Home", id: 1 },
     { path: "/order", name: "Booking Details", id: 2 },
@@ -28,18 +29,27 @@ const Navbar = () => {
       });
   }
 
+  function handleOpen(value) {
+    setOPen(value);
+  }
+
   return (
-    <div className="bg-[#a3e2ac4b] rounded-b-2xl duration-200 ">
+    <div className="bg-[#a3e2ac4b] h-24 rounded-b-2xl duration-200  top-0 z-50">
       <nav className="p-6 flex justify-between items-center max-w-7xl mx-auto ">
         <div className="flex items-center gap-1">
           <div onClick={() => setOPen(!open)} className="text-2xl lg:hidden">
             {open ? <RxCross2 /> : <HiMenuAlt1 />}
           </div>
-          <div className="text-2xl md:text-3xl font-extrabold">
-            Comfortable Nest
+          <div className="text-3xl md:text-4xl font-extrabold text-[#3f3f3f]">
+            C<span className="text-green-700">nest</span>
           </div>
         </div>
-        <NavMiddle user={user} routes={routes} open={open}></NavMiddle>
+        <NavMiddle
+          handleOpen={handleOpen}
+          user={user}
+          routes={routes}
+          open={open}
+        ></NavMiddle>
         <div className="flex gap-4">
           {user ? (
             <div className="flex items-center gap-5">

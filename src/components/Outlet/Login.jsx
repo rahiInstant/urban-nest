@@ -6,8 +6,10 @@ import { AuthContext } from "../../AuthProvider/authContext";
 import toast from "react-hot-toast";
 import { IoLogoGoogle } from "react-icons/io";
 import { Helmet } from "react-helmet-async";
+import { NavContext } from "../navContext";
 
 const Login = () => {
+  const { setOPen } = useContext(NavContext);
   const [show, setShow] = useState(false);
   const [passFieldType, setPassFieldType] = useState("password");
   const [title, setTitle] = useState("Nest | login");
@@ -63,7 +65,7 @@ const Login = () => {
       });
   }
   return (
-    <div className=" flex items-center justify-center  select-none mt-24">
+    <div onClick={() => setOPen(false)}  className=" flex items-center justify-center h-full  select-none mt-24">
       <Helmet>
         <title>{title}</title>
       </Helmet>

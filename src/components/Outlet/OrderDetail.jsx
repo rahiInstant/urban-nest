@@ -1,20 +1,23 @@
 import { Link, useNavigate } from "react-router-dom";
 import { getData, removeFromLs } from "./manageLS";
 import { RxCross2 } from "react-icons/rx";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
+import { NavContext } from "../navContext";
 const OrderDetail = () => {
   const [data, setData] = useState([]);
+  const { setOPen } = useContext(NavContext);
+
   useEffect(() => {
     setData(getData());
   }, []);
   function handleCancleBtn(id) {
-    removeFromLs(id) 
-    const remainingCart = data.filter((item) => item.id !== id)
-    setData(remainingCart)
+    removeFromLs(id);
+    const remainingCart = data.filter((item) => item.id !== id);
+    setData(remainingCart);
   }
   return (
-    <div className="mt-10">
+    <div onClick={() => setOPen(false)} className="mt-10">
       <Helmet>
         <title>Nest | Booking Detail</title>
       </Helmet>

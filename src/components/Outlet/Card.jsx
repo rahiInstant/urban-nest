@@ -5,10 +5,11 @@ import { IoLocationSharp } from "react-icons/io5";
 import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
+
 const Card = () => {
   const data = useLoaderData();
   return (
-    <div className="mt-12 lg:mt-28 ">
+    <div className="mt-12 lg:mt-28 z-10">
       <div className="flex flex-col gap-6 items-center mx-4">
         <h1 className="font-black text-3xl md:text-4xl lg:text-[55px] text-center">
           Versatile Housing Options
@@ -133,11 +134,12 @@ const Card = () => {
       </div>
       <div className=" h-fit mt-10 lg:mt-20 w-full ">
         <h1 className="text-3xl md:text-4xl lg:text-[55px] font-black text-center">Find us</h1>
-        <hr className="mb-5 mt-3 lg:mt-10"/>
+        <hr className="mb-5 mt-3 lg:mt-5"/>
         <MapContainer
           style={{
             height: "350px",
-            borderRadius:'10px'
+            borderRadius:'10px',
+            zIndex:'-10'
           }}
           
           center={[22.36739838024788, 91.84276665826629]}

@@ -1,28 +1,35 @@
-import { Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
+import  { Pagination, Autoplay} from "swiper/modules";
+import  { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-
+import 'swiper/css/effect-fade';
 import Aos from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import Card from "./Card";
+import { NavContext } from "../navContext";
+import Partner from "./Partner";
 
 const Home = () => {
+  const { setOPen } = useContext(NavContext);
+
   useEffect(() => {
     Aos.init();
   }, []);
 
   return (
-    <div className="mx-4 -z-50 mt-7">
+    <div onClick={() => setOPen(false)} className="mx-4 -z-50 mt-7">
       <Swiper
-      pagination={true}
-        modules={[Pagination]}
+        pagination={true}
+        modules={[Pagination, Autoplay]}
         className="mySwiper"
         spaceBetween={50}
         slidesPerView={1}
         loop={true}
+        autoplay={{
+          delay: 2000,
+          
+        }}
 
         // onSlideChange={() => console.log("slide change")}
       >
@@ -46,6 +53,7 @@ const Home = () => {
         </SwiperSlide>
       </Swiper>
       <Card></Card>
+      <Partner></Partner>
     </div>
   );
 };

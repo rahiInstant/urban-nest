@@ -4,8 +4,10 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { AuthContext } from "../../AuthProvider/authContext";
 import { Helmet } from "react-helmet-async";
+import { NavContext } from "../navContext";
 
 const Register = () => {
+  const { setOPen } = useContext(NavContext);
   const [show, setShow] = useState(false);
   const [passFieldType, setPassFieldType] = useState("password");
   const [title, setTitle] = useState("Nest | login");
@@ -54,7 +56,7 @@ const Register = () => {
       });
   }
   return (
-    <div className=" flex items-center justify-center select-none  mt-24">
+    <div onClick={() => setOPen(false)} className=" flex items-center justify-center select-none  mt-24">
       <Helmet>
         <title>{title}</title>
       </Helmet>
