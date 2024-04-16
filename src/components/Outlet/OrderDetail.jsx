@@ -7,16 +7,22 @@ const OrderDetail = () => {
   useEffect(() => {
     setData(getData());
   }, []);
-
+  console.log(data)
 
   const storageData = getData();
   console.log(storageData);
+
+  function handleCancleBtn(id) {
+    removeFromLs(id) 
+    const remainingCart = data.filter((item) => item.id !== id)
+    setData(remainingCart)
+  }
   return (
     <div className="mt-10">
       <h1 className="text-3xl font-bold text-center">
         Your Submitted Schedule
       </h1>
-      <hr className="mt-5"/>
+      <hr className="mt-5" />
       <div className="mt-12">
         {data.map((item, id) => {
           return (
@@ -25,35 +31,33 @@ const OrderDetail = () => {
               className="border h-fit rounded-lg p-4 w-[300px] flex flex-col text-justify relative"
             >
               <div
-                onClick={() => removeFromLs("1")}
+                onClick={() => handleCancleBtn(item.id)}
                 className="h-6 w-6 absolute rounded-full flex justify-center items-center -left-2 -top-2 cursor-pointer text-white bg-red-600"
               >
                 <RxCross2 />
               </div>
               <div className="space-y-2 mb-4">
                 <h1 className="text-center text-xl font-medium border border-green-600 p-3 rounded-md">
-                  Abdur Rahaman Rahi
+                  {item.name}
                 </h1>
 
                 <h1>
-                  <span className="  font-medium">E-mail:</span>{" "}
-                  rahiurp20@gmail.com
+                  <span className="  font-medium">E-mail:</span> {item.mail}
                 </h1>
                 <h1>
-                  <span className=" font-medium">Phone:</span> +545454454454545
+                  <span className=" font-medium">Phone:</span> {item.phone}
                 </h1>
                 <h1>
-                  <span className="  font-medium">Time:</span> 11.00 am to 2.00
-                  pm
+                  <span className="  font-medium">Time:</span> {item.time}
                 </h1>
                 <h1>
-                  <span className=" font-medium">Visiting Status:</span> Visit
-                  Physically{" "}
+                  <span className=" font-medium">Visiting Status:</span>{" "}
+                  {item.visit == "person"
+                    ? "Visit physically"
+                    : "Visit virtually"}
                 </h1>
                 <h1>
-                  <span className="  font-medium">Comment:</span> Lorem ipsum
-                  dolor sit amet consectetur adipisicing elit. Optio,
-                  accusantium!
+                  <span className="  font-medium">Comment:</span> {item.comment}
                 </h1>
               </div>
               <div>
