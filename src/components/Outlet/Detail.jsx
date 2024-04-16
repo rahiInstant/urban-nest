@@ -8,6 +8,7 @@ import { Helmet } from "react-helmet-async";
 const Detail = () => {
   const data = useLoaderData();
   const [heroImg, setHeroImg] = useState(data.image);
+  const [formData, setFormData] = useState({});
   const [helmet, setHelmet] = useState("Nest | Detail ");
   const navigate = useNavigate();
 
