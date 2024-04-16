@@ -29,7 +29,7 @@ const Card = () => {
             >
               <img
                 className="rounded-lg lg:w-60 w-full"
-                src="/public/slide_01.jpg"
+                src={category.image}
                 alt=""
               />
               <div className="w-full">
@@ -132,6 +132,8 @@ const Card = () => {
         </div> */}
       </div>
       <div className=" h-fit mt-10 w-full ">
+        <h1 className="text-3xl md:text-4xl lg:text-[55px] font-black text-center">Find us</h1>
+        <hr className="mb-5 mt-3"/>
         <MapContainer
           style={{
             height: "350px",
@@ -146,10 +148,10 @@ const Card = () => {
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          <Marker position={[51.505, -0.09]}>
+          <Marker position={[22.36739838024788, 91.84276665826629]}>
             <Popup>
-              Nest Ltd. <br />
-              Agargao, Dhaka
+              <span className="text-lg font-bold">Nest Ltd.</span> <br />
+              Beside dimond hotel, Chattorgram
             </Popup>
           </Marker>
         </MapContainer>

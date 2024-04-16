@@ -9,7 +9,7 @@
     "area": "3000 sq ft",
     "location": "Los Angeles, California",
     "facilities": ["swimming pool", "patio", "gourmet kitchen"],
-    "image": "/public/slide_01.jpg"
+    "image": "/card_01.jpg"
   },
   {
     "estate_title": "Townhouse in Historic District",
@@ -21,7 +21,7 @@
     "area": "2000 sq ft",
     "location": "Boston, Massachusetts",
     "facilities": ["fireplace", "garden", "garage"],
-    "image": "/public/slide_02.jpg"
+    "image": "/card_02.jpg"
   },
   {
     "estate_title": "Luxury in Urban High-Rise",
@@ -33,7 +33,7 @@
     "area": "1800 sq ft",
     "location": "New York City, New York",
     "facilities": ["fitness center", "rooftop terrace", "concierge service"],
-    "image": "luxury_apartment_urban_highrise.jpg"
+    "image": "/card_03.jpg"
   },
   {
     "estate_title": "Student Housing near Campus",
@@ -45,7 +45,7 @@
     "area": "1200 sq ft",
     "location": "Austin, Texas",
     "facilities": ["study lounge", "fitness center", "laundry facilities"],
-    "image": "student_housing_near_campus.jpg"
+    "image": "/card_04.jpg"
   },
   {
     "estate_title": "Community with Care Services",
@@ -57,7 +57,7 @@
     "area": "1500 sq ft",
     "location": "Scottsdale, Arizona",
     "facilities": ["community dining", "therapy rooms", "landscaped gardens"],
-    "image": "senior_living_community.jpg"
+    "image": "/card_05.jpg"
   },
   {
     "estate_title": "Beachfront Vacation Villa",
@@ -69,7 +69,7 @@
     "area": "2500 sq ft",
     "location": "Maui, Hawaii",
     "facilities": ["private beach access", "infinity pool", "outdoor kitchen"],
-    "image": "beachfront_vacation_rental_villa.jpg"
+    "image": "/card_06.jpg"
   },
   {
     "estate_title": "Cozy Family Home",
@@ -81,7 +81,7 @@
     "area": "2200 sq ft",
     "location": "Seattle, Washington",
     "facilities": ["backyard", "garage", "home office"],
-    "image": "family_home_suburban_neighborhood.jpg"
+    "image": "/card_07.jpg"
   },
   {
     "estate_title": "Contemporary Loft",
@@ -93,7 +93,7 @@
     "area": "1600 sq ft",
     "location": "Brooklyn, New York",
     "facilities": ["exposed brick walls", "large windows", "art studio space"],
-    "image": "contemporary_loft_artsy_district.jpg"
+    "image": "/card_08.jpg"
   },
   {
     "estate_title": "Mountain Retreat Cabin",
@@ -105,6 +105,6 @@
     "area": "1000 sq ft",
     "location": "Lake Tahoe, California",
     "facilities": ["wood-burning fireplace", "hot tub", "hiking trails nearby"],
-    "image": "mountain_retreat_cabin_scenic_views.jpg"
+    "image": "/card_09.jpg"
   }
 ]

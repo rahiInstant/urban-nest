@@ -26,19 +26,19 @@ const Home = () => {
         <SwiperSlide>
           <div
             id="ban"
-            className={`h-[500px] rounded-lg  bg-[url('/public/slide_02.jpg')] bg-cover bg-center`}
+            className={`h-[500px] rounded-lg  bg-[url('/slide_03.jpg')] bg-cover bg-center`}
           ></div>
         </SwiperSlide>
         <SwiperSlide>
           <div
             id="ban"
-            className={`h-[500px] rounded-lg  bg-[url('/public/slide_02.jpg')] bg-cover bg-center`}
+            className={`h-[500px] rounded-lg  bg-[url('/slide_07.jpg')] bg-cover bg-center`}
           ></div>
         </SwiperSlide>
         <SwiperSlide>
           <div
             id="ban"
-            className={`h-[500px] rounded-lg  bg-[url('/public/slide_02.jpg')] bg-cover bg-center`}
+            className={`h-[500px] rounded-lg  bg-[url('/slide_09.jpg')] bg-cover bg-center`}
           ></div>
         </SwiperSlide>
       </Swiper>

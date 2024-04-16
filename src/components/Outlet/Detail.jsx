@@ -73,13 +73,13 @@ const Detail = () => {
             </div>
             <div className="flex gap-3 mt-4 justify-center">
               <img
-                onMouseMove={() => setHeroImg("/slide_02.jpg")}
+                onMouseMove={() => setHeroImg("/card_02.jpg")}
                 className="w-40 h-28 rounded-lg cursor-pointer"
                 src="/slide_02.jpg"
                 alt=""
               />
               <img
-                onMouseMove={() => setHeroImg("/slide_01.jpg")}
+                onMouseMove={() => setHeroImg("/card_03.jpg")}
                 className="w-40 h-28 rounded-lg cursor-pointer"
                 src="/slide_01.jpg"
                 alt=""
